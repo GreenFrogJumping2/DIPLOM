@@ -16,5 +16,47 @@ namespace DIPLOM
         {
             InitializeComponent();
         }
+
+        private void заказчикиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormSakaschiki FormSakaschiki = new FormSakaschiki();
+            FormSakaschiki.ShowDialog();
+        }
+
+        private void видыИзделийToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormVidiIsdeliy FormVidiIsdeliy = new FormVidiIsdeliy();
+            FormVidiIsdeliy.ShowDialog();
+        }
+
+        private void фурнитураToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormFurnitura formFurnitura = new FormFurnitura();
+            formFurnitura.ShowDialog();
+        }
+
+        private void фурнитураToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FormSakupkaFurnituri formSakupkaFurnituri = new FormSakupkaFurnituri();
+            formSakupkaFurnituri.ShowDialog();
+        }
+
+        private void кожаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormKoja formKoja = new FormKoja();
+            formKoja.ShowDialog();
+        }
+
+        private void заказыToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FormSakasi formSakasi = new FormSakasi();
+            formSakasi.ShowDialog();
+        }
+
+        private void изделияToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormIsdelia formIsdelia = new FormIsdelia();
+            formIsdelia.ShowDialog();
+        }
     }
 }
