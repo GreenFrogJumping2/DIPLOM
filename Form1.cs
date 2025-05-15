@@ -58,5 +58,17 @@ namespace DIPLOM
             FormIsdelia formIsdelia = new FormIsdelia();
             formIsdelia.ShowDialog();
         }
+
+        private void остаткиКожиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormOstatkiKoji formOstatkiKoji = new FormOstatkiKoji();
+            formOstatkiKoji.ShowDialog();
+        }
+
+        private void остаткиФурнитурыToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormOstatkiFurnituri formOstatkiFurnituri = new FormOstatkiFurnituri();
+            formOstatkiFurnituri.ShowDialog();
+        }
     }
 }

@@ -38,6 +38,11 @@
             this.кожаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.заказыToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.изделияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.отчетыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.остаткиКожиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.остаткиФурнитурыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.изделияЗаМесяцToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.заказыЗаПериодToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,7 +53,8 @@
             this.справочникиToolStripMenuItem,
             this.заказыToolStripMenuItem,
             this.заказыToolStripMenuItem1,
-            this.изделияToolStripMenuItem});
+            this.изделияToolStripMenuItem,
+            this.отчетыToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 28);
@@ -123,6 +129,43 @@
             this.изделияToolStripMenuItem.Text = "Изделия";
             this.изделияToolStripMenuItem.Click += new System.EventHandler(this.изделияToolStripMenuItem_Click);
             // 
+            // отчетыToolStripMenuItem
+            // 
+            this.отчетыToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.остаткиКожиToolStripMenuItem,
+            this.остаткиФурнитурыToolStripMenuItem,
+            this.изделияЗаМесяцToolStripMenuItem,
+            this.заказыЗаПериодToolStripMenuItem});
+            this.отчетыToolStripMenuItem.Name = "отчетыToolStripMenuItem";
+            this.отчетыToolStripMenuItem.Size = new System.Drawing.Size(73, 24);
+            this.отчетыToolStripMenuItem.Text = "Отчеты";
+            // 
+            // остаткиКожиToolStripMenuItem
+            // 
+            this.остаткиКожиToolStripMenuItem.Name = "остаткиКожиToolStripMenuItem";
+            this.остаткиКожиToolStripMenuItem.Size = new System.Drawing.Size(227, 26);
+            this.остаткиКожиToolStripMenuItem.Text = "Остатки кожи";
+            this.остаткиКожиToolStripMenuItem.Click += new System.EventHandler(this.остаткиКожиToolStripMenuItem_Click);
+            // 
+            // остаткиФурнитурыToolStripMenuItem
+            // 
+            this.остаткиФурнитурыToolStripMenuItem.Name = "остаткиФурнитурыToolStripMenuItem";
+            this.остаткиФурнитурыToolStripMenuItem.Size = new System.Drawing.Size(227, 26);
+            this.остаткиФурнитурыToolStripMenuItem.Text = "Остатки фурнитуры";
+            this.остаткиФурнитурыToolStripMenuItem.Click += new System.EventHandler(this.остаткиФурнитурыToolStripMenuItem_Click);
+            // 
+            // изделияЗаМесяцToolStripMenuItem
+            // 
+            this.изделияЗаМесяцToolStripMenuItem.Name = "изделияЗаМесяцToolStripMenuItem";
+            this.изделияЗаМесяцToolStripMenuItem.Size = new System.Drawing.Size(227, 26);
+            this.изделияЗаМесяцToolStripMenuItem.Text = "Изделия за период";
+            // 
+            // заказыЗаПериодToolStripMenuItem
+            // 
+            this.заказыЗаПериодToolStripMenuItem.Name = "заказыЗаПериодToolStripMenuItem";
+            this.заказыЗаПериодToolStripMenuItem.Size = new System.Drawing.Size(227, 26);
+            this.заказыЗаПериодToolStripMenuItem.Text = "Заказы за период";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -151,6 +194,11 @@
         private System.Windows.Forms.ToolStripMenuItem заказыToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem закупкаФурнитурыToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem изделияToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem отчетыToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem остаткиКожиToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem остаткиФурнитурыToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem изделияЗаМесяцToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem заказыЗаПериодToolStripMenuItem;
     }
 }
 

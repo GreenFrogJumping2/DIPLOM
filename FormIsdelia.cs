@@ -41,6 +41,7 @@ namespace DIPLOM
             }
             comboBoxLoad2();
             dataGridLoad1();
+            dataGridLoad2();
         }
 
         void comboBoxLoad2()
@@ -57,6 +58,13 @@ namespace DIPLOM
             comboBox2.DisplayMember = "nasvanie";
             comboBox2.ValueMember = "id";
             comboBox2.Text = "";
+
+            SQL = "SELECT idIspolzuemoyKoji, (vidKoji + N' ' + CAST(ploshad AS NVARCHAR) + N' м2') AS nasv FROM ispolzuemayaKoja WHERE idVida = " + idVida;
+            DataTable dt2 = Program.DBController.SelectQuery(SQL);
+            comboBox3.DataSource = dt2;
+            comboBox3.DisplayMember = "nasv";
+            comboBox3.ValueMember = "idIspolzuemoyKoji";
+            comboBox3.Text = "";
         }
 
         void dataGridLoad1()
@@ -82,12 +90,68 @@ namespace DIPLOM
             string kolvo = "";
             while (dr.Read())
             {
-                kolvo = ((String.Format("{0}", dr["kolvo"])));
+                kolvo = (String.Format("{0}", dr["kolvo"]));
             }
             SQL = "INSERT INTO satrachenayaFurnitura (kolvo, idFurnituri, idIsdelia) VALUES ('" + kolvo + "', '" + idFurnituri + "', '" + idIsdelia + "')";
             Program.DBController.Query(SQL);
             dataGridLoad1();
             comboBoxLoad2();
+        }
+
+        void comboBoxLoad3()
+        {
+            string SQL1 = "SELECT vidKoji FROM ispolzuemayaKoja WHERE idIspolzuemoyKoji = " + comboBox3.SelectedValue.ToString();
+            SqlDataReader dr = Program.DBController.ReaderQuery(SQL1);
+            string vidKoji = "";
+            while (dr.Read())
+            {
+                vidKoji = ((String.Format("{0}", dr["vidKoji"])));
+            }
+            string SQL = "SELECT idLista, (vidKoji + N' №' + CAST(idLista AS NVARCHAR)) AS list FROM listiKoji WHERE vidKoji = N'" + vidKoji + "'";
+            DataTable dt = Program.DBController.SelectQuery(SQL);
+            comboBox4.DataSource = dt;
+            comboBox4.DisplayMember = "list";
+            comboBox4.ValueMember = "idLista";
+            comboBox4.Text = "";
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            comboBoxLoad3();
+        }
+
+        void dataGridLoad2()
+        {
+            string idIsdelia = comboBox1.SelectedValue.ToString();
+            string SQL = "SELECT satrachenayaKoja.idSatrachenoyKoji, (vidKoji + N' №' + CAST(listiKoji.idLista AS NVARCHAR)) AS list, ploshadViresa FROM satrachenayaKoja JOIN listiKoji ON listiKoji.idLista = satrachenayaKoja.idLista JOIN isdelia ON isdelia.idIsdelia = satrachenayaKoja.idIsdelia WHERE isdelia.idIsdelia = " + idIsdelia;
+            DataTable dt = Program.DBController.SelectQuery(SQL);
+            dataGridView2.DataSource = dt;
+            dataGridView2.Columns[0].HeaderText = "№";
+            dataGridView2.Columns[0].Width = 50;
+            dataGridView2.Columns[1].HeaderText = "Лист кожи";
+            dataGridView2.Columns[1].Width = 150;
+            dataGridView2.Columns[2].HeaderText = "Площадь выреза (м2)";
+            dataGridView2.Columns[2].Width = 100;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            string trebuemKoja = comboBox3.SelectedValue.ToString();
+            string listKoji = comboBox4.SelectedValue.ToString();
+            string isdelie = comboBox1.SelectedValue.ToString();
+            string ploshad = "";
+            string SQL = "SELECT ploshad FROM ispolzuemayaKoja WHERE idIspolzuemoyKoji = " + comboBox3.SelectedValue.ToString();
+            SqlDataReader dr = Program.DBController.ReaderQuery(SQL);
+            while (dr.Read())
+            {
+                ploshad = Program.DBController.ConvertToNumeric((String.Format("{0}", dr["ploshad"])));
+            }
+            /*
+             * Здесь будет проверка остатков кожи
+             */
+            string SQL2 = "INSERT INTO satrachenayaKoja(ploshadViresa, idLista, idIsdelia) VALUES('" + ploshad + "', '" + listKoji + "', '" + isdelie + "')";
+            Program.DBController.Query(SQL2);
+            dataGridLoad2();
         }
     }
 }
