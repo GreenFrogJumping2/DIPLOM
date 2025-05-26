@@ -54,13 +54,13 @@ namespace DIPLOM
             dataGridView2.Columns[0].HeaderText = "№";
             dataGridView2.Columns[0].Width = 50;
             dataGridView2.Columns[1].HeaderText = "Закупка";
-            dataGridView2.Columns[1].Width = 100;
+            dataGridView2.Columns[1].Width = 150;
             dataGridView2.Columns[2].HeaderText = "Вид кожи";
-            dataGridView2.Columns[2].Width = 150;
+            dataGridView2.Columns[2].Width = 130;
             dataGridView2.Columns[3].HeaderText = "Площадь (м2)";
-            dataGridView2.Columns[3].Width = 100;
+            dataGridView2.Columns[3].Width = 150;
             dataGridView2.Columns[4].HeaderText = "Стоимость (р/м2)";
-            dataGridView2.Columns[4].Width = 100;
+            dataGridView2.Columns[4].Width = 180;
         }
 
         void comboBoxesUpdate()
@@ -160,6 +160,7 @@ namespace DIPLOM
             button4.Enabled = false;
             button5.Enabled = false;
             button6.Enabled = false;
+            button7.Enabled = false;
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -169,6 +170,10 @@ namespace DIPLOM
 
         private void dataGridView2_Click(object sender, EventArgs e)
         {
+            if (dataGridView2[1, dataGridView2.CurrentRow.Index].Value.ToString() == "")
+            {
+                return;
+            }
             comboBox1.Text = dataGridView2[1, dataGridView2.CurrentRow.Index].Value.ToString();
             comboBox2.Text = dataGridView2[2, dataGridView2.CurrentRow.Index].Value.ToString();
             textBox2.Text = dataGridView2[3, dataGridView2.CurrentRow.Index].Value.ToString();
@@ -177,11 +182,26 @@ namespace DIPLOM
             button4.Enabled = true;
             button5.Enabled = true;
             button6.Enabled = true;
+            button7.Enabled = true;
         }
 
         private void dataGridView1_Click(object sender, EventArgs e)
         {
             button2.Enabled = true;
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                FormSpisanieKoji formSpisanieKoji = new FormSpisanieKoji(dataGridView2[0, dataGridView2.CurrentRow.Index].Value.ToString());
+                formSpisanieKoji.ShowDialog();
+                dataGridUpdate2();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
     }
 }

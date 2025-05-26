@@ -36,7 +36,7 @@ namespace DIPLOM
                 dataGridView1.Columns[0].HeaderText = "№";
                 dataGridView1.Columns[0].Width = 50;
                 dataGridView1.Columns[1].HeaderText = "Название";
-                dataGridView1.Columns[1].Width = 300;
+                dataGridView1.Columns[1].Width = 350;
             }
             catch (Exception ex)
             {

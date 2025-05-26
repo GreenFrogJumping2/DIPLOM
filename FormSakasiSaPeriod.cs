@@ -12,9 +12,9 @@ using Excel = Microsoft.Office.Interop.Excel;
 
 namespace DIPLOM
 {
-    public partial class FormOstatkiKoji : Form
+    public partial class FormSakasiSaPeriod : Form
     {
-        public FormOstatkiKoji()
+        public FormSakasiSaPeriod()
         {
             InitializeComponent();
         }
@@ -27,8 +27,11 @@ namespace DIPLOM
             Excel.Workbook workbook = excelApp.Workbooks.Add();
             Excel.Worksheet worksheet = (Excel.Worksheet)workbook.Sheets[1];
 
+            string date1 = dateTimePicker1.Value.ToString("MM.dd.yyyy");
+            string date2 = dateTimePicker2.Value.ToString("MM.dd.yyyy");
+
             worksheet.Range["A1:D1"].Merge();
-            worksheet.Cells[1, 1] = "Остатки кожи на " + DateTime.Now.ToString("dd.MM.yyyy");
+            worksheet.Cells[1, 1] = "Заказы с " + date1 + " по " + date2;
             worksheet.Cells[1, 1].Font.Size = 12;
             worksheet.Cells[1, 1].Font.Bold = true;
             worksheet.Cells[1, 1].HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
@@ -39,25 +42,25 @@ namespace DIPLOM
             worksheet.Cells[3, 1].Borders.Weight = Excel.XlBorderWeight.xlThick;
             worksheet.Columns[1].columnWidth = 6;
 
-            worksheet.Cells[3, 2] = "Лист";
+            worksheet.Cells[3, 2] = "Заказ";
             worksheet.Cells[3, 2].Font.Size = 12;
             worksheet.Cells[3, 2].Borders.LineStyle = 1;
             worksheet.Cells[3, 2].Borders.Weight = Excel.XlBorderWeight.xlThick;
-            worksheet.Columns[2].columnWidth = 6;
+            worksheet.Columns[2].columnWidth = 12;
 
-            worksheet.Cells[3, 3] = "Вид кожи";
+            worksheet.Cells[3, 3] = "Дата заказа";
             worksheet.Cells[3, 3].Font.Size = 12;
             worksheet.Cells[3, 3].Borders.LineStyle = 1;
             worksheet.Cells[3, 3].Borders.Weight = Excel.XlBorderWeight.xlThick;
             worksheet.Columns[3].columnWidth = 18;
 
-            worksheet.Cells[3, 4] = "Оставшаяся площадь (м2)";
+            worksheet.Cells[3, 4] = "ФИО заказчика";
             worksheet.Cells[3, 4].Font.Size = 12;
             worksheet.Cells[3, 4].Borders.LineStyle = 1;
             worksheet.Cells[3, 4].Borders.Weight = Excel.XlBorderWeight.xlThick;
-            worksheet.Columns[4].columnWidth = 25;
+            worksheet.Columns[4].columnWidth = 24;
 
-            string SQL = "SELECT idLista, vidKoji, ploshad FROM listiKoji WHERE prichinaSpisania IS NULL ORDER BY idLista";
+            string SQL = "SELECT sakas.idSakasa, FORMAT(sakas.data, 'yyyy-MM-dd') AS data, sakaschiki.fio FROM sakas JOIN sakaschiki ON sakaschiki.idSakaschika = sakas.idSakaschika WHERE sakas.data BETWEEN '" + date1 + "' AND '" + date2 + "'";
             SqlDataReader dr = Program.DBController.ReaderQuery(SQL);
             int i = 4;
             while (dr.Read())
@@ -66,31 +69,18 @@ namespace DIPLOM
                 worksheet.Cells[i, 1].Font.Size = 12;
                 worksheet.Cells[i, 1].Borders.LineStyle = 1;
 
-                worksheet.Cells[i, 2].Value = (String.Format("{0}", dr["idLista"]));
+                worksheet.Cells[i, 2].Value = (String.Format("{0}", dr["idSakasa"]));
                 worksheet.Cells[i, 2].Font.Size = 12;
                 worksheet.Cells[i, 2].Borders.LineStyle = 1;
 
-                worksheet.Cells[i, 3].Value = (String.Format("{0}", dr["vidKoji"]));
+                worksheet.Cells[i, 3].Value = (String.Format("{0}", dr["data"]));
                 worksheet.Cells[i, 3].Font.Size = 12;
                 worksheet.Cells[i, 3].Borders.LineStyle = 1;
 
-                worksheet.Cells[i, 4].Value = (String.Format("{0}", dr["ploshad"]));
+                worksheet.Cells[i, 4].Value = (String.Format("{0}", dr["fio"]));
                 worksheet.Cells[i, 4].Font.Size = 12;
                 worksheet.Cells[i, 4].Borders.LineStyle = 1;
 
-                i++;
-            }
-            dr.Close();
-
-            string SQL1 = "SELECT idLista, SUM(ploshadViresa) AS ploshad FROM satrachenayaKoja GROUP BY idLista";
-            SqlDataReader dr1 = Program.DBController.ReaderQuery(SQL1);
-            i = 4;
-            while (dr1.Read())
-            {
-                if ((String.Format("{0}", dr1["idLista"])) == worksheet.Cells[i, 2].Value.ToString())
-                {
-                    worksheet.Cells[i, 4].Value = Convert.ToString(Convert.ToDouble(worksheet.Cells[i, 4].Value) - Convert.ToDouble((String.Format("{0}", dr1["ploshad"]))));
-                }
                 i++;
             }
         }

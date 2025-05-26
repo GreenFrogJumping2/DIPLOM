@@ -39,9 +39,9 @@ namespace DIPLOM
                 dataGridView1.Columns[1].HeaderText = "Название";
                 dataGridView1.Columns[1].Width = 250;
                 dataGridView1.Columns[2].HeaderText = "Стоимость (р.)";
-                dataGridView1.Columns[2].Width = 150;
+                dataGridView1.Columns[2].Width = 200;
                 dataGridView1.Columns[3].HeaderText = "Количество (шт.)";
-                dataGridView1.Columns[3].Width = 150;
+                dataGridView1.Columns[3].Width = 200;
             }
             catch (Exception ex)
             {

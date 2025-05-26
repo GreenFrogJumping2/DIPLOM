@@ -43,9 +43,9 @@ namespace DIPLOM
             dataGridView1.Columns[0].HeaderText = "№";
             dataGridView1.Columns[0].Width = 50;
             dataGridView1.Columns[1].HeaderText = "Заказчик";
-            dataGridView1.Columns[1].Width = 150;
+            dataGridView1.Columns[1].Width = 250;
             dataGridView1.Columns[2].HeaderText = "Дата";
-            dataGridView1.Columns[2].Width = 100;
+            dataGridView1.Columns[2].Width = 150;
         }
 
         void clear1()

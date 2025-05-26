@@ -70,5 +70,28 @@ namespace DIPLOM
             FormOstatkiFurnituri formOstatkiFurnituri = new FormOstatkiFurnituri();
             formOstatkiFurnituri.ShowDialog();
         }
+
+        private void заказыЗаПериодToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormSakasiSaPeriod formSakasiSaPeriod = new FormSakasiSaPeriod();
+            formSakasiSaPeriod.ShowDialog();
+        }
+
+        private void выходToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void списанаяКожаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormSpisanayaKoja formSpisanayaKoja = new FormSpisanayaKoja();
+            formSpisanayaKoja.ShowDialog();
+        }
+
+        private void изделияЗаМесяцToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormIsdeliaSaPeriod formIsdeliaSaPeriod = new FormIsdeliaSaPeriod();
+            formIsdeliaSaPeriod.ShowDialog();
+        }
     }
 }

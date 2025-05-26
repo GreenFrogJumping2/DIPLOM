@@ -12,9 +12,9 @@ using Excel = Microsoft.Office.Interop.Excel;
 
 namespace DIPLOM
 {
-    public partial class FormOstatkiKoji : Form
+    public partial class FormSpisanayaKoja : Form
     {
-        public FormOstatkiKoji()
+        public FormSpisanayaKoja()
         {
             InitializeComponent();
         }
@@ -27,8 +27,11 @@ namespace DIPLOM
             Excel.Workbook workbook = excelApp.Workbooks.Add();
             Excel.Worksheet worksheet = (Excel.Worksheet)workbook.Sheets[1];
 
-            worksheet.Range["A1:D1"].Merge();
-            worksheet.Cells[1, 1] = "Остатки кожи на " + DateTime.Now.ToString("dd.MM.yyyy");
+            string data1 = dateTimePicker1.Value.ToString("MM.dd.yyyy");
+            string data2 = dateTimePicker2.Value.ToString("MM.dd.yyyy");
+
+            worksheet.Range["A1:F1"].Merge();
+            worksheet.Cells[1, 1] = "Списанные листы кожи с " + data1 + " по " + data2;
             worksheet.Cells[1, 1].Font.Size = 12;
             worksheet.Cells[1, 1].Font.Bold = true;
             worksheet.Cells[1, 1].HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
@@ -57,7 +60,19 @@ namespace DIPLOM
             worksheet.Cells[3, 4].Borders.Weight = Excel.XlBorderWeight.xlThick;
             worksheet.Columns[4].columnWidth = 25;
 
-            string SQL = "SELECT idLista, vidKoji, ploshad FROM listiKoji WHERE prichinaSpisania IS NULL ORDER BY idLista";
+            worksheet.Cells[3, 5] = "Причина списания";
+            worksheet.Cells[3, 5].Font.Size = 12;
+            worksheet.Cells[3, 5].Borders.LineStyle = 1;
+            worksheet.Cells[3, 5].Borders.Weight = Excel.XlBorderWeight.xlThick;
+            worksheet.Columns[5].columnWidth = 25;
+
+            worksheet.Cells[3, 6] = "Дата списания";
+            worksheet.Cells[3, 6].Font.Size = 12;
+            worksheet.Cells[3, 6].Borders.LineStyle = 1;
+            worksheet.Cells[3, 6].Borders.Weight = Excel.XlBorderWeight.xlThick;
+            worksheet.Columns[6].columnWidth = 25;
+
+            string SQL = "SELECT idLista, vidKoji, ploshad, prichinaSpisania, dataSpisania FROM listiKoji WHERE (dataSpisania BETWEEN '" + data1 + "' AND '" + data2 + "') AND NOT (dataSpisania IS NULL) ORDER BY dataSpisania";
             SqlDataReader dr = Program.DBController.ReaderQuery(SQL);
             int i = 4;
             while (dr.Read())
@@ -78,20 +93,33 @@ namespace DIPLOM
                 worksheet.Cells[i, 4].Font.Size = 12;
                 worksheet.Cells[i, 4].Borders.LineStyle = 1;
 
+                worksheet.Cells[i, 5].Value = (String.Format("{0}", dr["prichinaSpisania"]));
+                worksheet.Cells[i, 5].Font.Size = 12;
+                worksheet.Cells[i, 5].Borders.LineStyle = 1;
+
+                worksheet.Cells[i, 6].Value = (String.Format("{0}", dr["dataSpisania"]));
+                worksheet.Cells[i, 6].Font.Size = 12;
+                worksheet.Cells[i, 6].Borders.LineStyle = 1;
+
                 i++;
             }
             dr.Close();
+            int maxI = i;
 
             string SQL1 = "SELECT idLista, SUM(ploshadViresa) AS ploshad FROM satrachenayaKoja GROUP BY idLista";
             SqlDataReader dr1 = Program.DBController.ReaderQuery(SQL1);
-            i = 4;
             while (dr1.Read())
             {
-                if ((String.Format("{0}", dr1["idLista"])) == worksheet.Cells[i, 2].Value.ToString())
+                i = 4;
+                while(i < maxI)
                 {
-                    worksheet.Cells[i, 4].Value = Convert.ToString(Convert.ToDouble(worksheet.Cells[i, 4].Value) - Convert.ToDouble((String.Format("{0}", dr1["ploshad"]))));
+                    if ((String.Format("{0}", dr1["idLista"])) == worksheet.Cells[i, 2].Value.ToString())
+                    {
+                        worksheet.Cells[i, 4].Value = Convert.ToString(Convert.ToDouble(worksheet.Cells[i, 4].Value) - Convert.ToDouble((String.Format("{0}", dr1["ploshad"]))));
+                        break;
+                    }
+                    i++;
                 }
-                i++;
             }
         }
     }

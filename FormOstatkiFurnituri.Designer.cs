@@ -33,9 +33,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(80, 12);
+            this.button1.Location = new System.Drawing.Point(73, 14);
+            this.button1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(174, 45);
+            this.button1.Size = new System.Drawing.Size(245, 37);
             this.button1.TabIndex = 0;
             this.button1.Text = "Сформировать отчет";
             this.button1.UseVisualStyleBackColor = true;
@@ -43,10 +44,12 @@
             // 
             // FormOstatkiFurnituri
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 26F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(340, 78);
+            this.ClientSize = new System.Drawing.Size(398, 63);
             this.Controls.Add(this.button1);
+            this.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.Name = "FormOstatkiFurnituri";
             this.Text = "Остатки фурнитуры";
             this.ResumeLayout(false);

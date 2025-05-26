@@ -76,9 +76,9 @@ namespace DIPLOM
             dataGridView1.Columns[0].HeaderText = "№";
             dataGridView1.Columns[0].Width = 50;
             dataGridView1.Columns[1].HeaderText = "Вид фурнитуры";
-            dataGridView1.Columns[1].Width = 150;
+            dataGridView1.Columns[1].Width = 200;
             dataGridView1.Columns[2].HeaderText = "Количество";
-            dataGridView1.Columns[2].Width = 100;
+            dataGridView1.Columns[2].Width = 200;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -129,9 +129,9 @@ namespace DIPLOM
             dataGridView2.Columns[0].HeaderText = "№";
             dataGridView2.Columns[0].Width = 50;
             dataGridView2.Columns[1].HeaderText = "Лист кожи";
-            dataGridView2.Columns[1].Width = 150;
+            dataGridView2.Columns[1].Width = 200;
             dataGridView2.Columns[2].HeaderText = "Площадь выреза (м2)";
-            dataGridView2.Columns[2].Width = 100;
+            dataGridView2.Columns[2].Width = 250;
         }
 
         private void button4_Click(object sender, EventArgs e)

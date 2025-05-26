@@ -68,21 +68,27 @@ namespace DIPLOM
                 worksheet.Cells[i, 3].Font.Size = 12;
                 worksheet.Cells[i, 3].Borders.LineStyle = 1;
 
-                worksheet.Cells[i, 4].Value = (String.Format("{0}", dr["idFurnituri"]));
+                worksheet.Cells[i, 100].Value = (String.Format("{0}", dr["idFurnituri"]));
                 i++;
             }
             dr.Close();
+            int maxI = i;
 
             string SQL1 = "SELECT idFurnituri, SUM(kolvo) AS kolvo FROM sakupkaFurnituri GROUP BY idFurnituri";
             SqlDataReader dr1 = Program.DBController.ReaderQuery(SQL1);
             i = 4;
             while (dr1.Read())
             {
-                if ((String.Format("{0}", dr1["idFurnituri"])) == worksheet.Cells[i, 4].Value.ToString())
+                i = 4;
+                while (i <= maxI)
                 {
-                    worksheet.Cells[i, 3].Value = Convert.ToString(Convert.ToInt32(worksheet.Cells[i, 3].Value) + Convert.ToInt32((String.Format("{0}", dr1["kolvo"]))));
+                    if ((String.Format("{0}", dr1["idFurnituri"])) == worksheet.Cells[i, 100].Value.ToString())
+                    {
+                        worksheet.Cells[i, 3].Value = Convert.ToString(Convert.ToInt32(worksheet.Cells[i, 3].Value) + Convert.ToInt32((String.Format("{0}", dr1["kolvo"]))));
+                        break;
+                    }
+                    i++;
                 }
-                i++;
             }
             dr1.Close();
 
@@ -91,18 +97,24 @@ namespace DIPLOM
             i = 4;
             while (dr2.Read())
             {
-                if ((String.Format("{0}", dr2["idFurnituri"])) == worksheet.Cells[i, 4].Value.ToString())
+                i = 4;
+                while (i <= maxI)
                 {
-                    worksheet.Cells[i, 3].Value = Convert.ToString(Convert.ToInt32(worksheet.Cells[i, 3].Value) - Convert.ToInt32((String.Format("{0}", dr2["kolvo"]))));
+                    if ((String.Format("{0}", dr2["idFurnituri"])) == worksheet.Cells[i, 100].Value.ToString())
+                    {
+                        worksheet.Cells[i, 3].Value = Convert.ToString(Convert.ToInt32(worksheet.Cells[i, 3].Value) - Convert.ToInt32((String.Format("{0}", dr2["kolvo"]))));
+                        break;
+                    }
+                    i++;
                 }
-                i++;
             }
             dr2.Close();
 
-            while (i >= 4)
+            i = 4;
+            while (i <= maxI)
             {
-                worksheet.Cells[i, 4].Value = "";
-                i--;
+                worksheet.Cells[i, 100].Value = "";
+                i++;
             }
         }
     }
