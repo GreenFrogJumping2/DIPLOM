@@ -59,7 +59,7 @@ namespace DIPLOM
             comboBox2.ValueMember = "id";
             comboBox2.Text = "";
 
-            SQL = "SELECT idIspolzuemoyKoji, (vidKoji + N' ' + CAST(ploshad AS NVARCHAR) + N' м2') AS nasv FROM ispolzuemayaKoja WHERE idVida = " + idVida;
+            SQL = "SELECT idIspolzuemoyKoji, (vidKoji + N' ' + CAST(ploshad AS NVARCHAR) + N' м2') AS nasv FROM ispolzuemayaKoja WHERE idVida = " + idVida + " AND idIspolzuemoyKoji NOT IN (SELECT idIspolzuemoyKoji FROM satrachenayaKoja WHERE idIsdelia = " + comboBox1.SelectedValue.ToString() + ")";
             DataTable dt2 = Program.DBController.SelectQuery(SQL);
             comboBox3.DataSource = dt2;
             comboBox3.DisplayMember = "nasv";
@@ -91,6 +91,11 @@ namespace DIPLOM
             while (dr.Read())
             {
                 kolvo = (String.Format("{0}", dr["kolvo"]));
+            }
+            if (checkFurnitura(idFurnituri, kolvo) == false)
+            {
+                MessageBox.Show("Недостаточно фурнитуры");
+                return;
             }
             SQL = "INSERT INTO satrachenayaFurnitura (kolvo, idFurnituri, idIsdelia) VALUES ('" + kolvo + "', '" + idFurnituri + "', '" + idIsdelia + "')";
             Program.DBController.Query(SQL);
@@ -146,12 +151,78 @@ namespace DIPLOM
             {
                 ploshad = Program.DBController.ConvertToNumeric((String.Format("{0}", dr["ploshad"])));
             }
+            if (checkKoja(trebuemKoja, listKoji) == false)
+            {
+                MessageBox.Show("Не хватает кожи, выберите другой лист.");
+                return;
+            }
             /*
              * Здесь будет проверка остатков кожи
              */
-            string SQL2 = "INSERT INTO satrachenayaKoja(ploshadViresa, idLista, idIsdelia) VALUES('" + ploshad + "', '" + listKoji + "', '" + isdelie + "')";
+            string SQL2 = "INSERT INTO satrachenayaKoja(ploshadViresa, idLista, idIsdelia, idIspolzuemoyKoji) VALUES('" + ploshad + "', '" + listKoji + "', '" + isdelie + "', '" + trebuemKoja + "')";
             Program.DBController.Query(SQL2);
             dataGridLoad2();
+            comboBoxLoad2();
+        }
+
+        bool checkKoja(string trebKoja, string listKoji)
+        {
+            string SQL = "SELECT ploshad FROM listiKoji WHERE idLista = " + listKoji;
+            SqlDataReader dr = Program.DBController.ReaderQuery(SQL);
+            double ploshad = 0;
+            while (dr.Read())
+            {
+                ploshad = Convert.ToDouble((String.Format("{0}", dr["ploshad"])));
+            }
+            dr.Close();
+            string SQL1 = "SELECT SUM(ploshadViresa) AS ploshad FROM satrachenayaKoja WHERE idLista = " + listKoji + " GROUP BY idLista";
+            SqlDataReader dr1 = Program.DBController.ReaderQuery(SQL1);
+            while (dr1.Read())
+            {
+                ploshad -= Convert.ToDouble((String.Format("{0}", dr1["ploshad"])));
+            }
+            string SQL2 = "SELECT ploshad FROM ispolzuemayaKoja WHERE idIspolzuemoyKoji = " + trebKoja;
+            SqlDataReader dr2 = Program.DBController.ReaderQuery(SQL2);
+            double treb = 0;
+            while (dr2.Read())
+            {
+                treb = Convert.ToDouble((String.Format("{0}", dr2["ploshad"])));
+            }
+            dr2.Close();
+            if (ploshad < treb)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        bool checkFurnitura(string idFurnituri, string trebKolvo)
+        {
+            string SQL = "SELECT SUM(kolvo) AS kolvo FROM sakupkaFurnituri WHERE idFurnituri = " + idFurnituri + " GROUP BY idFurnituri";
+            SqlDataReader dr = Program.DBController.ReaderQuery(SQL);
+            int kolvo = 0;
+            while (dr.Read())
+            {
+                kolvo += Convert.ToInt32((String.Format("{0}", dr["kolvo"])));
+            }
+            dr.Close();
+            string SQL1 = "SELECT SUM(kolvo) AS kolvo FROM satrachenayaFurnitura WHERE idFurnituri = " + idFurnituri + " GROUP BY idFurnituri";
+            SqlDataReader dr1 = Program.DBController.ReaderQuery(SQL1);
+            while (dr1.Read())
+            {
+                kolvo -= Convert.ToInt32((String.Format("{0}", dr1["kolvo"])));
+            }
+            if (kolvo < Convert.ToUInt32(trebKolvo))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
     }
 }

@@ -44,9 +44,9 @@
             this.остаткиФурнитурыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.изделияЗаМесяцToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.заказыЗаПериодToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.списанаяКожаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.списанаяКожаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -64,7 +64,7 @@
             this.выходToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(898, 34);
+            this.menuStrip1.Size = new System.Drawing.Size(973, 34);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -151,14 +151,14 @@
             // остаткиКожиToolStripMenuItem
             // 
             this.остаткиКожиToolStripMenuItem.Name = "остаткиКожиToolStripMenuItem";
-            this.остаткиКожиToolStripMenuItem.Size = new System.Drawing.Size(294, 30);
+            this.остаткиКожиToolStripMenuItem.Size = new System.Drawing.Size(343, 30);
             this.остаткиКожиToolStripMenuItem.Text = "Остатки кожи";
             this.остаткиКожиToolStripMenuItem.Click += new System.EventHandler(this.остаткиКожиToolStripMenuItem_Click);
             // 
             // остаткиФурнитурыToolStripMenuItem
             // 
             this.остаткиФурнитурыToolStripMenuItem.Name = "остаткиФурнитурыToolStripMenuItem";
-            this.остаткиФурнитурыToolStripMenuItem.Size = new System.Drawing.Size(294, 30);
+            this.остаткиФурнитурыToolStripMenuItem.Size = new System.Drawing.Size(343, 30);
             this.остаткиФурнитурыToolStripMenuItem.Text = "Остатки фурнитуры";
             this.остаткиФурнитурыToolStripMenuItem.Click += new System.EventHandler(this.остаткиФурнитурыToolStripMenuItem_Click);
             // 
@@ -172,9 +172,16 @@
             // заказыЗаПериодToolStripMenuItem
             // 
             this.заказыЗаПериодToolStripMenuItem.Name = "заказыЗаПериодToolStripMenuItem";
-            this.заказыЗаПериодToolStripMenuItem.Size = new System.Drawing.Size(294, 30);
+            this.заказыЗаПериодToolStripMenuItem.Size = new System.Drawing.Size(343, 30);
             this.заказыЗаПериодToolStripMenuItem.Text = "Заказы за период";
             this.заказыЗаПериодToolStripMenuItem.Click += new System.EventHandler(this.заказыЗаПериодToolStripMenuItem_Click);
+            // 
+            // списанаяКожаToolStripMenuItem
+            // 
+            this.списанаяКожаToolStripMenuItem.Name = "списанаяКожаToolStripMenuItem";
+            this.списанаяКожаToolStripMenuItem.Size = new System.Drawing.Size(343, 30);
+            this.списанаяКожаToolStripMenuItem.Text = "Списаная кожа за период";
+            this.списанаяКожаToolStripMenuItem.Click += new System.EventHandler(this.списанаяКожаToolStripMenuItem_Click);
             // 
             // выходToolStripMenuItem
             // 
@@ -189,23 +196,16 @@
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(0, 37);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(898, 417);
+            this.pictureBox1.Size = new System.Drawing.Size(973, 491);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
-            // 
-            // списанаяКожаToolStripMenuItem
-            // 
-            this.списанаяКожаToolStripMenuItem.Name = "списанаяКожаToolStripMenuItem";
-            this.списанаяКожаToolStripMenuItem.Size = new System.Drawing.Size(343, 30);
-            this.списанаяКожаToolStripMenuItem.Text = "Списаная кожа за период";
-            this.списанаяКожаToolStripMenuItem.Click += new System.EventHandler(this.списанаяКожаToolStripMenuItem_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(898, 450);
+            this.ClientSize = new System.Drawing.Size(973, 528);
             this.ControlBox = false;
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.menuStrip1);

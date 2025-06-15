@@ -44,9 +44,9 @@ namespace DIPLOM {
         
         private satrachenayaFurnituraDataTable tablesatrachenayaFurnitura;
         
-        private SatrachenayaKojaDataTable tableSatrachenayaKoja;
-        
         private listiKojiDataTable tablelistiKoji;
+        
+        private SatrachenayaKojaDataTable tableSatrachenayaKoja;
         
         private global::System.Data.DataRelation relationFK__isdelia__idSakas__3D5E1FD2;
         
@@ -66,11 +66,13 @@ namespace DIPLOM {
         
         private global::System.Data.DataRelation relationFK__satrachen__idIsd__46E78A0C;
         
+        private global::System.Data.DataRelation relationFK__listiKoji__idSak__02FC7413;
+        
         private global::System.Data.DataRelation relationFK__Satrachen__idIsd__4F7CD00D;
         
-        private global::System.Data.DataRelation relationFK__Satrachen__idLis__03F0984C;
+        private global::System.Data.DataRelation relationFK__Satrachen__idIsp__151B244E;
         
-        private global::System.Data.DataRelation relationFK__listiKoji__idSak__02FC7413;
+        private global::System.Data.DataRelation relationFK__Satrachen__idLis__03F0984C;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -130,11 +132,11 @@ namespace DIPLOM {
                 if ((ds.Tables["satrachenayaFurnitura"] != null)) {
                     base.Tables.Add(new satrachenayaFurnituraDataTable(ds.Tables["satrachenayaFurnitura"]));
                 }
-                if ((ds.Tables["SatrachenayaKoja"] != null)) {
-                    base.Tables.Add(new SatrachenayaKojaDataTable(ds.Tables["SatrachenayaKoja"]));
-                }
                 if ((ds.Tables["listiKoji"] != null)) {
                     base.Tables.Add(new listiKojiDataTable(ds.Tables["listiKoji"]));
+                }
+                if ((ds.Tables["SatrachenayaKoja"] != null)) {
+                    base.Tables.Add(new SatrachenayaKojaDataTable(ds.Tables["SatrachenayaKoja"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -258,9 +260,9 @@ namespace DIPLOM {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public SatrachenayaKojaDataTable SatrachenayaKoja {
+        public listiKojiDataTable listiKoji {
             get {
-                return this.tableSatrachenayaKoja;
+                return this.tablelistiKoji;
             }
         }
         
@@ -268,9 +270,9 @@ namespace DIPLOM {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public listiKojiDataTable listiKoji {
+        public SatrachenayaKojaDataTable SatrachenayaKoja {
             get {
-                return this.tablelistiKoji;
+                return this.tableSatrachenayaKoja;
             }
         }
         
@@ -371,11 +373,11 @@ namespace DIPLOM {
                 if ((ds.Tables["satrachenayaFurnitura"] != null)) {
                     base.Tables.Add(new satrachenayaFurnituraDataTable(ds.Tables["satrachenayaFurnitura"]));
                 }
-                if ((ds.Tables["SatrachenayaKoja"] != null)) {
-                    base.Tables.Add(new SatrachenayaKojaDataTable(ds.Tables["SatrachenayaKoja"]));
-                }
                 if ((ds.Tables["listiKoji"] != null)) {
                     base.Tables.Add(new listiKojiDataTable(ds.Tables["listiKoji"]));
+                }
+                if ((ds.Tables["SatrachenayaKoja"] != null)) {
+                    base.Tables.Add(new SatrachenayaKojaDataTable(ds.Tables["SatrachenayaKoja"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -470,16 +472,16 @@ namespace DIPLOM {
                     this.tablesatrachenayaFurnitura.InitVars();
                 }
             }
-            this.tableSatrachenayaKoja = ((SatrachenayaKojaDataTable)(base.Tables["SatrachenayaKoja"]));
-            if ((initTable == true)) {
-                if ((this.tableSatrachenayaKoja != null)) {
-                    this.tableSatrachenayaKoja.InitVars();
-                }
-            }
             this.tablelistiKoji = ((listiKojiDataTable)(base.Tables["listiKoji"]));
             if ((initTable == true)) {
                 if ((this.tablelistiKoji != null)) {
                     this.tablelistiKoji.InitVars();
+                }
+            }
+            this.tableSatrachenayaKoja = ((SatrachenayaKojaDataTable)(base.Tables["SatrachenayaKoja"]));
+            if ((initTable == true)) {
+                if ((this.tableSatrachenayaKoja != null)) {
+                    this.tableSatrachenayaKoja.InitVars();
                 }
             }
             this.relationFK__isdelia__idSakas__3D5E1FD2 = this.Relations["FK__isdelia__idSakas__3D5E1FD2"];
@@ -491,9 +493,10 @@ namespace DIPLOM {
             this.relationFK__sakupkaFu__idFur__5EBF139D = this.Relations["FK__sakupkaFu__idFur__5EBF139D"];
             this.relationFK__satrachen__idFur__5CD6CB2B = this.Relations["FK__satrachen__idFur__5CD6CB2B"];
             this.relationFK__satrachen__idIsd__46E78A0C = this.Relations["FK__satrachen__idIsd__46E78A0C"];
-            this.relationFK__Satrachen__idIsd__4F7CD00D = this.Relations["FK__Satrachen__idIsd__4F7CD00D"];
-            this.relationFK__Satrachen__idLis__03F0984C = this.Relations["FK__Satrachen__idLis__03F0984C"];
             this.relationFK__listiKoji__idSak__02FC7413 = this.Relations["FK__listiKoji__idSak__02FC7413"];
+            this.relationFK__Satrachen__idIsd__4F7CD00D = this.Relations["FK__Satrachen__idIsd__4F7CD00D"];
+            this.relationFK__Satrachen__idIsp__151B244E = this.Relations["FK__Satrachen__idIsp__151B244E"];
+            this.relationFK__Satrachen__idLis__03F0984C = this.Relations["FK__Satrachen__idLis__03F0984C"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -524,10 +527,10 @@ namespace DIPLOM {
             base.Tables.Add(this.tablesakupkaKoji);
             this.tablesatrachenayaFurnitura = new satrachenayaFurnituraDataTable();
             base.Tables.Add(this.tablesatrachenayaFurnitura);
-            this.tableSatrachenayaKoja = new SatrachenayaKojaDataTable();
-            base.Tables.Add(this.tableSatrachenayaKoja);
             this.tablelistiKoji = new listiKojiDataTable();
             base.Tables.Add(this.tablelistiKoji);
+            this.tableSatrachenayaKoja = new SatrachenayaKojaDataTable();
+            base.Tables.Add(this.tableSatrachenayaKoja);
             this.relationFK__isdelia__idSakas__3D5E1FD2 = new global::System.Data.DataRelation("FK__isdelia__idSakas__3D5E1FD2", new global::System.Data.DataColumn[] {
                         this.tableSakas.idSakasaColumn}, new global::System.Data.DataColumn[] {
                         this.tableisdelia.idSakasaColumn}, false);
@@ -564,18 +567,22 @@ namespace DIPLOM {
                         this.tableisdelia.idIsdeliaColumn}, new global::System.Data.DataColumn[] {
                         this.tablesatrachenayaFurnitura.idIsdeliaColumn}, false);
             this.Relations.Add(this.relationFK__satrachen__idIsd__46E78A0C);
-            this.relationFK__Satrachen__idIsd__4F7CD00D = new global::System.Data.DataRelation("FK__Satrachen__idIsd__4F7CD00D", new global::System.Data.DataColumn[] {
-                        this.tableisdelia.idIsdeliaColumn}, new global::System.Data.DataColumn[] {
-                        this.tableSatrachenayaKoja.idIsdeliaColumn}, false);
-            this.Relations.Add(this.relationFK__Satrachen__idIsd__4F7CD00D);
-            this.relationFK__Satrachen__idLis__03F0984C = new global::System.Data.DataRelation("FK__Satrachen__idLis__03F0984C", new global::System.Data.DataColumn[] {
-                        this.tablelistiKoji.idListaColumn}, new global::System.Data.DataColumn[] {
-                        this.tableSatrachenayaKoja.idListaColumn}, false);
-            this.Relations.Add(this.relationFK__Satrachen__idLis__03F0984C);
             this.relationFK__listiKoji__idSak__02FC7413 = new global::System.Data.DataRelation("FK__listiKoji__idSak__02FC7413", new global::System.Data.DataColumn[] {
                         this.tablesakupkaKoji.idSakupkiColumn}, new global::System.Data.DataColumn[] {
                         this.tablelistiKoji.idSakupkiColumn}, false);
             this.Relations.Add(this.relationFK__listiKoji__idSak__02FC7413);
+            this.relationFK__Satrachen__idIsd__4F7CD00D = new global::System.Data.DataRelation("FK__Satrachen__idIsd__4F7CD00D", new global::System.Data.DataColumn[] {
+                        this.tableisdelia.idIsdeliaColumn}, new global::System.Data.DataColumn[] {
+                        this.tableSatrachenayaKoja.idIsdeliaColumn}, false);
+            this.Relations.Add(this.relationFK__Satrachen__idIsd__4F7CD00D);
+            this.relationFK__Satrachen__idIsp__151B244E = new global::System.Data.DataRelation("FK__Satrachen__idIsp__151B244E", new global::System.Data.DataColumn[] {
+                        this.tableispolzuemayaKoja.idIspolzuemoyKojiColumn}, new global::System.Data.DataColumn[] {
+                        this.tableSatrachenayaKoja.idIspolzuemoyKojiColumn}, false);
+            this.Relations.Add(this.relationFK__Satrachen__idIsp__151B244E);
+            this.relationFK__Satrachen__idLis__03F0984C = new global::System.Data.DataRelation("FK__Satrachen__idLis__03F0984C", new global::System.Data.DataColumn[] {
+                        this.tablelistiKoji.idListaColumn}, new global::System.Data.DataColumn[] {
+                        this.tableSatrachenayaKoja.idListaColumn}, false);
+            this.Relations.Add(this.relationFK__Satrachen__idLis__03F0984C);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -640,13 +647,13 @@ namespace DIPLOM {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private bool ShouldSerializeSatrachenayaKoja() {
+        private bool ShouldSerializelistiKoji() {
             return false;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private bool ShouldSerializelistiKoji() {
+        private bool ShouldSerializeSatrachenayaKoja() {
             return false;
         }
         
@@ -736,10 +743,10 @@ namespace DIPLOM {
         public delegate void satrachenayaFurnituraRowChangeEventHandler(object sender, satrachenayaFurnituraRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public delegate void SatrachenayaKojaRowChangeEventHandler(object sender, SatrachenayaKojaRowChangeEvent e);
+        public delegate void listiKojiRowChangeEventHandler(object sender, listiKojiRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public delegate void listiKojiRowChangeEventHandler(object sender, listiKojiRowChangeEvent e);
+        public delegate void SatrachenayaKojaRowChangeEventHandler(object sender, SatrachenayaKojaRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -3728,319 +3735,6 @@ namespace DIPLOM {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class SatrachenayaKojaDataTable : global::System.Data.TypedTableBase<SatrachenayaKojaRow> {
-            
-            private global::System.Data.DataColumn columnidSatrachenoyKoji;
-            
-            private global::System.Data.DataColumn columnploshadViresa;
-            
-            private global::System.Data.DataColumn columnidLista;
-            
-            private global::System.Data.DataColumn columnidIsdelia;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public SatrachenayaKojaDataTable() {
-                this.TableName = "SatrachenayaKoja";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal SatrachenayaKojaDataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected SatrachenayaKojaDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn idSatrachenoyKojiColumn {
-                get {
-                    return this.columnidSatrachenoyKoji;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn ploshadViresaColumn {
-                get {
-                    return this.columnploshadViresa;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn idListaColumn {
-                get {
-                    return this.columnidLista;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn idIsdeliaColumn {
-                get {
-                    return this.columnidIsdelia;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public SatrachenayaKojaRow this[int index] {
-                get {
-                    return ((SatrachenayaKojaRow)(this.Rows[index]));
-                }
-            }
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event SatrachenayaKojaRowChangeEventHandler SatrachenayaKojaRowChanging;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event SatrachenayaKojaRowChangeEventHandler SatrachenayaKojaRowChanged;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event SatrachenayaKojaRowChangeEventHandler SatrachenayaKojaRowDeleting;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event SatrachenayaKojaRowChangeEventHandler SatrachenayaKojaRowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void AddSatrachenayaKojaRow(SatrachenayaKojaRow row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public SatrachenayaKojaRow AddSatrachenayaKojaRow(decimal ploshadViresa, listiKojiRow parentlistiKojiRowByFK__Satrachen__idLis__03F0984C, isdeliaRow parentisdeliaRowByFK__Satrachen__idIsd__4F7CD00D) {
-                SatrachenayaKojaRow rowSatrachenayaKojaRow = ((SatrachenayaKojaRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        null,
-                        ploshadViresa,
-                        null,
-                        null};
-                if ((parentlistiKojiRowByFK__Satrachen__idLis__03F0984C != null)) {
-                    columnValuesArray[2] = parentlistiKojiRowByFK__Satrachen__idLis__03F0984C[0];
-                }
-                if ((parentisdeliaRowByFK__Satrachen__idIsd__4F7CD00D != null)) {
-                    columnValuesArray[3] = parentisdeliaRowByFK__Satrachen__idIsd__4F7CD00D[0];
-                }
-                rowSatrachenayaKojaRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowSatrachenayaKojaRow);
-                return rowSatrachenayaKojaRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public SatrachenayaKojaRow FindByidSatrachenoyKoji(int idSatrachenoyKoji) {
-                return ((SatrachenayaKojaRow)(this.Rows.Find(new object[] {
-                            idSatrachenoyKoji})));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public override global::System.Data.DataTable Clone() {
-                SatrachenayaKojaDataTable cln = ((SatrachenayaKojaDataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new SatrachenayaKojaDataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal void InitVars() {
-                this.columnidSatrachenoyKoji = base.Columns["idSatrachenoyKoji"];
-                this.columnploshadViresa = base.Columns["ploshadViresa"];
-                this.columnidLista = base.Columns["idLista"];
-                this.columnidIsdelia = base.Columns["idIsdelia"];
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            private void InitClass() {
-                this.columnidSatrachenoyKoji = new global::System.Data.DataColumn("idSatrachenoyKoji", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnidSatrachenoyKoji);
-                this.columnploshadViresa = new global::System.Data.DataColumn("ploshadViresa", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnploshadViresa);
-                this.columnidLista = new global::System.Data.DataColumn("idLista", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnidLista);
-                this.columnidIsdelia = new global::System.Data.DataColumn("idIsdelia", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnidIsdelia);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnidSatrachenoyKoji}, true));
-                this.columnidSatrachenoyKoji.AutoIncrement = true;
-                this.columnidSatrachenoyKoji.AutoIncrementSeed = -1;
-                this.columnidSatrachenoyKoji.AutoIncrementStep = -1;
-                this.columnidSatrachenoyKoji.AllowDBNull = false;
-                this.columnidSatrachenoyKoji.ReadOnly = true;
-                this.columnidSatrachenoyKoji.Unique = true;
-                this.columnploshadViresa.AllowDBNull = false;
-                this.columnidLista.AllowDBNull = false;
-                this.columnidIsdelia.AllowDBNull = false;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public SatrachenayaKojaRow NewSatrachenayaKojaRow() {
-                return ((SatrachenayaKojaRow)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new SatrachenayaKojaRow(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(SatrachenayaKojaRow);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this.SatrachenayaKojaRowChanged != null)) {
-                    this.SatrachenayaKojaRowChanged(this, new SatrachenayaKojaRowChangeEvent(((SatrachenayaKojaRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this.SatrachenayaKojaRowChanging != null)) {
-                    this.SatrachenayaKojaRowChanging(this, new SatrachenayaKojaRowChangeEvent(((SatrachenayaKojaRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this.SatrachenayaKojaRowDeleted != null)) {
-                    this.SatrachenayaKojaRowDeleted(this, new SatrachenayaKojaRowChangeEvent(((SatrachenayaKojaRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this.SatrachenayaKojaRowDeleting != null)) {
-                    this.SatrachenayaKojaRowDeleting(this, new SatrachenayaKojaRowChangeEvent(((SatrachenayaKojaRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void RemoveSatrachenayaKojaRow(SatrachenayaKojaRow row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DataSet1 ds = new DataSet1();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "SatrachenayaKojaDataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
-        
-        /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class listiKojiDataTable : global::System.Data.TypedTableBase<listiKojiRow> {
             
             private global::System.Data.DataColumn columnidLista;
@@ -4351,6 +4045,337 @@ namespace DIPLOM {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "listiKojiDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class SatrachenayaKojaDataTable : global::System.Data.TypedTableBase<SatrachenayaKojaRow> {
+            
+            private global::System.Data.DataColumn columnidSatrachenoyKoji;
+            
+            private global::System.Data.DataColumn columnploshadViresa;
+            
+            private global::System.Data.DataColumn columnidLista;
+            
+            private global::System.Data.DataColumn columnidIsdelia;
+            
+            private global::System.Data.DataColumn columnidIspolzuemoyKoji;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public SatrachenayaKojaDataTable() {
+                this.TableName = "SatrachenayaKoja";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal SatrachenayaKojaDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected SatrachenayaKojaDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn idSatrachenoyKojiColumn {
+                get {
+                    return this.columnidSatrachenoyKoji;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ploshadViresaColumn {
+                get {
+                    return this.columnploshadViresa;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn idListaColumn {
+                get {
+                    return this.columnidLista;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn idIsdeliaColumn {
+                get {
+                    return this.columnidIsdelia;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn idIspolzuemoyKojiColumn {
+                get {
+                    return this.columnidIspolzuemoyKoji;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public SatrachenayaKojaRow this[int index] {
+                get {
+                    return ((SatrachenayaKojaRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event SatrachenayaKojaRowChangeEventHandler SatrachenayaKojaRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event SatrachenayaKojaRowChangeEventHandler SatrachenayaKojaRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event SatrachenayaKojaRowChangeEventHandler SatrachenayaKojaRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event SatrachenayaKojaRowChangeEventHandler SatrachenayaKojaRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void AddSatrachenayaKojaRow(SatrachenayaKojaRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public SatrachenayaKojaRow AddSatrachenayaKojaRow(decimal ploshadViresa, listiKojiRow parentlistiKojiRowByFK__Satrachen__idLis__03F0984C, isdeliaRow parentisdeliaRowByFK__Satrachen__idIsd__4F7CD00D, ispolzuemayaKojaRow parentispolzuemayaKojaRowByFK__Satrachen__idIsp__151B244E) {
+                SatrachenayaKojaRow rowSatrachenayaKojaRow = ((SatrachenayaKojaRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        ploshadViresa,
+                        null,
+                        null,
+                        null};
+                if ((parentlistiKojiRowByFK__Satrachen__idLis__03F0984C != null)) {
+                    columnValuesArray[2] = parentlistiKojiRowByFK__Satrachen__idLis__03F0984C[0];
+                }
+                if ((parentisdeliaRowByFK__Satrachen__idIsd__4F7CD00D != null)) {
+                    columnValuesArray[3] = parentisdeliaRowByFK__Satrachen__idIsd__4F7CD00D[0];
+                }
+                if ((parentispolzuemayaKojaRowByFK__Satrachen__idIsp__151B244E != null)) {
+                    columnValuesArray[4] = parentispolzuemayaKojaRowByFK__Satrachen__idIsp__151B244E[0];
+                }
+                rowSatrachenayaKojaRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowSatrachenayaKojaRow);
+                return rowSatrachenayaKojaRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public SatrachenayaKojaRow FindByidSatrachenoyKoji(int idSatrachenoyKoji) {
+                return ((SatrachenayaKojaRow)(this.Rows.Find(new object[] {
+                            idSatrachenoyKoji})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                SatrachenayaKojaDataTable cln = ((SatrachenayaKojaDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new SatrachenayaKojaDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal void InitVars() {
+                this.columnidSatrachenoyKoji = base.Columns["idSatrachenoyKoji"];
+                this.columnploshadViresa = base.Columns["ploshadViresa"];
+                this.columnidLista = base.Columns["idLista"];
+                this.columnidIsdelia = base.Columns["idIsdelia"];
+                this.columnidIspolzuemoyKoji = base.Columns["idIspolzuemoyKoji"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            private void InitClass() {
+                this.columnidSatrachenoyKoji = new global::System.Data.DataColumn("idSatrachenoyKoji", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnidSatrachenoyKoji);
+                this.columnploshadViresa = new global::System.Data.DataColumn("ploshadViresa", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnploshadViresa);
+                this.columnidLista = new global::System.Data.DataColumn("idLista", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnidLista);
+                this.columnidIsdelia = new global::System.Data.DataColumn("idIsdelia", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnidIsdelia);
+                this.columnidIspolzuemoyKoji = new global::System.Data.DataColumn("idIspolzuemoyKoji", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnidIspolzuemoyKoji);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnidSatrachenoyKoji}, true));
+                this.columnidSatrachenoyKoji.AutoIncrement = true;
+                this.columnidSatrachenoyKoji.AutoIncrementSeed = -1;
+                this.columnidSatrachenoyKoji.AutoIncrementStep = -1;
+                this.columnidSatrachenoyKoji.AllowDBNull = false;
+                this.columnidSatrachenoyKoji.ReadOnly = true;
+                this.columnidSatrachenoyKoji.Unique = true;
+                this.columnploshadViresa.AllowDBNull = false;
+                this.columnidLista.AllowDBNull = false;
+                this.columnidIsdelia.AllowDBNull = false;
+                this.columnidIspolzuemoyKoji.AllowDBNull = false;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public SatrachenayaKojaRow NewSatrachenayaKojaRow() {
+                return ((SatrachenayaKojaRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new SatrachenayaKojaRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(SatrachenayaKojaRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.SatrachenayaKojaRowChanged != null)) {
+                    this.SatrachenayaKojaRowChanged(this, new SatrachenayaKojaRowChangeEvent(((SatrachenayaKojaRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.SatrachenayaKojaRowChanging != null)) {
+                    this.SatrachenayaKojaRowChanging(this, new SatrachenayaKojaRowChangeEvent(((SatrachenayaKojaRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.SatrachenayaKojaRowDeleted != null)) {
+                    this.SatrachenayaKojaRowDeleted(this, new SatrachenayaKojaRowChangeEvent(((SatrachenayaKojaRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.SatrachenayaKojaRowDeleting != null)) {
+                    this.SatrachenayaKojaRowDeleting(this, new SatrachenayaKojaRowChangeEvent(((SatrachenayaKojaRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void RemoveSatrachenayaKojaRow(SatrachenayaKojaRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DataSet1 ds = new DataSet1();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "SatrachenayaKojaDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -4783,6 +4808,17 @@ namespace DIPLOM {
                     this.SetParentRow(value, this.Table.ParentRelations["FK__ispolzuem__idVid__6FE99F9F"]);
                 }
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public SatrachenayaKojaRow[] GetSatrachenayaKojaRows() {
+                if ((this.Table.ChildRelations["FK__Satrachen__idIsp__151B244E"] == null)) {
+                    return new SatrachenayaKojaRow[0];
+                }
+                else {
+                    return ((SatrachenayaKojaRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Satrachen__idIsp__151B244E"])));
+                }
+            }
         }
         
         /// <summary>
@@ -5116,87 +5152,6 @@ namespace DIPLOM {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class SatrachenayaKojaRow : global::System.Data.DataRow {
-            
-            private SatrachenayaKojaDataTable tableSatrachenayaKoja;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal SatrachenayaKojaRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tableSatrachenayaKoja = ((SatrachenayaKojaDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int idSatrachenoyKoji {
-                get {
-                    return ((int)(this[this.tableSatrachenayaKoja.idSatrachenoyKojiColumn]));
-                }
-                set {
-                    this[this.tableSatrachenayaKoja.idSatrachenoyKojiColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public decimal ploshadViresa {
-                get {
-                    return ((decimal)(this[this.tableSatrachenayaKoja.ploshadViresaColumn]));
-                }
-                set {
-                    this[this.tableSatrachenayaKoja.ploshadViresaColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int idLista {
-                get {
-                    return ((int)(this[this.tableSatrachenayaKoja.idListaColumn]));
-                }
-                set {
-                    this[this.tableSatrachenayaKoja.idListaColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int idIsdelia {
-                get {
-                    return ((int)(this[this.tableSatrachenayaKoja.idIsdeliaColumn]));
-                }
-                set {
-                    this[this.tableSatrachenayaKoja.idIsdeliaColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public isdeliaRow isdeliaRow {
-                get {
-                    return ((isdeliaRow)(this.GetParentRow(this.Table.ParentRelations["FK__Satrachen__idIsd__4F7CD00D"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__Satrachen__idIsd__4F7CD00D"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public listiKojiRow listiKojiRow {
-                get {
-                    return ((listiKojiRow)(this.GetParentRow(this.Table.ParentRelations["FK__Satrachen__idLis__03F0984C"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__Satrachen__idLis__03F0984C"]);
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
         public partial class listiKojiRow : global::System.Data.DataRow {
             
             private listiKojiDataTable tablelistiKoji;
@@ -5338,6 +5293,109 @@ namespace DIPLOM {
                 }
                 else {
                     return ((SatrachenayaKojaRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Satrachen__idLis__03F0984C"])));
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class SatrachenayaKojaRow : global::System.Data.DataRow {
+            
+            private SatrachenayaKojaDataTable tableSatrachenayaKoja;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal SatrachenayaKojaRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableSatrachenayaKoja = ((SatrachenayaKojaDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int idSatrachenoyKoji {
+                get {
+                    return ((int)(this[this.tableSatrachenayaKoja.idSatrachenoyKojiColumn]));
+                }
+                set {
+                    this[this.tableSatrachenayaKoja.idSatrachenoyKojiColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public decimal ploshadViresa {
+                get {
+                    return ((decimal)(this[this.tableSatrachenayaKoja.ploshadViresaColumn]));
+                }
+                set {
+                    this[this.tableSatrachenayaKoja.ploshadViresaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int idLista {
+                get {
+                    return ((int)(this[this.tableSatrachenayaKoja.idListaColumn]));
+                }
+                set {
+                    this[this.tableSatrachenayaKoja.idListaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int idIsdelia {
+                get {
+                    return ((int)(this[this.tableSatrachenayaKoja.idIsdeliaColumn]));
+                }
+                set {
+                    this[this.tableSatrachenayaKoja.idIsdeliaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int idIspolzuemoyKoji {
+                get {
+                    return ((int)(this[this.tableSatrachenayaKoja.idIspolzuemoyKojiColumn]));
+                }
+                set {
+                    this[this.tableSatrachenayaKoja.idIspolzuemoyKojiColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public isdeliaRow isdeliaRow {
+                get {
+                    return ((isdeliaRow)(this.GetParentRow(this.Table.ParentRelations["FK__Satrachen__idIsd__4F7CD00D"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__Satrachen__idIsd__4F7CD00D"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public ispolzuemayaKojaRow ispolzuemayaKojaRow {
+                get {
+                    return ((ispolzuemayaKojaRow)(this.GetParentRow(this.Table.ParentRelations["FK__Satrachen__idIsp__151B244E"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__Satrachen__idIsp__151B244E"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public listiKojiRow listiKojiRow {
+                get {
+                    return ((listiKojiRow)(this.GetParentRow(this.Table.ParentRelations["FK__Satrachen__idLis__03F0984C"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__Satrachen__idLis__03F0984C"]);
                 }
             }
         }
@@ -5686,22 +5744,22 @@ namespace DIPLOM {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public class SatrachenayaKojaRowChangeEvent : global::System.EventArgs {
+        public class listiKojiRowChangeEvent : global::System.EventArgs {
             
-            private SatrachenayaKojaRow eventRow;
+            private listiKojiRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public SatrachenayaKojaRowChangeEvent(SatrachenayaKojaRow row, global::System.Data.DataRowAction action) {
+            public listiKojiRowChangeEvent(listiKojiRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public SatrachenayaKojaRow Row {
+            public listiKojiRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -5720,22 +5778,22 @@ namespace DIPLOM {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public class listiKojiRowChangeEvent : global::System.EventArgs {
+        public class SatrachenayaKojaRowChangeEvent : global::System.EventArgs {
             
-            private listiKojiRow eventRow;
+            private SatrachenayaKojaRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public listiKojiRowChangeEvent(listiKojiRow row, global::System.Data.DataRowAction action) {
+            public SatrachenayaKojaRowChangeEvent(SatrachenayaKojaRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public listiKojiRow Row {
+            public SatrachenayaKojaRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -8957,325 +9015,6 @@ SELECT idSatrachenoyFurnituri, kolvo, idFurnituri, idIsdelia FROM satrachenayaFu
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class SatrachenayaKojaTableAdapter : global::System.ComponentModel.Component {
-        
-        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
-        
-        private global::System.Data.SqlClient.SqlConnection _connection;
-        
-        private global::System.Data.SqlClient.SqlTransaction _transaction;
-        
-        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
-        
-        private bool _clearBeforeFill;
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public SatrachenayaKojaTableAdapter() {
-            this.ClearBeforeFill = true;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
-            get {
-                if ((this._adapter == null)) {
-                    this.InitAdapter();
-                }
-                return this._adapter;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        internal global::System.Data.SqlClient.SqlConnection Connection {
-            get {
-                if ((this._connection == null)) {
-                    this.InitConnection();
-                }
-                return this._connection;
-            }
-            set {
-                this._connection = value;
-                if ((this.Adapter.InsertCommand != null)) {
-                    this.Adapter.InsertCommand.Connection = value;
-                }
-                if ((this.Adapter.DeleteCommand != null)) {
-                    this.Adapter.DeleteCommand.Connection = value;
-                }
-                if ((this.Adapter.UpdateCommand != null)) {
-                    this.Adapter.UpdateCommand.Connection = value;
-                }
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    if ((this.CommandCollection[i] != null)) {
-                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
-                    }
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        internal global::System.Data.SqlClient.SqlTransaction Transaction {
-            get {
-                return this._transaction;
-            }
-            set {
-                this._transaction = value;
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    this.CommandCollection[i].Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.DeleteCommand != null))) {
-                    this.Adapter.DeleteCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.InsertCommand != null))) {
-                    this.Adapter.InsertCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.UpdateCommand != null))) {
-                    this.Adapter.UpdateCommand.Transaction = this._transaction;
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
-            get {
-                if ((this._commandCollection == null)) {
-                    this.InitCommandCollection();
-                }
-                return this._commandCollection;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public bool ClearBeforeFill {
-            get {
-                return this._clearBeforeFill;
-            }
-            set {
-                this._clearBeforeFill = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private void InitAdapter() {
-            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
-            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
-            tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "SatrachenayaKoja";
-            tableMapping.ColumnMappings.Add("idSatrachenoyKoji", "idSatrachenoyKoji");
-            tableMapping.ColumnMappings.Add("ploshadViresa", "ploshadViresa");
-            tableMapping.ColumnMappings.Add("idLista", "idLista");
-            tableMapping.ColumnMappings.Add("idIsdelia", "idIsdelia");
-            this._adapter.TableMappings.Add(tableMapping);
-            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[SatrachenayaKoja] WHERE (([idSatrachenoyKoji] = @Original_idSa" +
-                "trachenoyKoji) AND ([ploshadViresa] = @Original_ploshadViresa) AND ([idLista] = " +
-                "@Original_idLista) AND ([idIsdelia] = @Original_idIsdelia))";
-            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idSatrachenoyKoji", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idSatrachenoyKoji", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ploshadViresa", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 2, "ploshadViresa", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idLista", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idLista", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idIsdelia", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idIsdelia", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[SatrachenayaKoja] ([ploshadViresa], [idLista], [idIsdelia]) VA" +
-                "LUES (@ploshadViresa, @idLista, @idIsdelia);\r\nSELECT idSatrachenoyKoji, ploshadV" +
-                "iresa, idLista, idIsdelia FROM SatrachenayaKoja WHERE (idSatrachenoyKoji = SCOPE" +
-                "_IDENTITY())";
-            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ploshadViresa", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 2, "ploshadViresa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idLista", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idLista", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idIsdelia", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idIsdelia", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[SatrachenayaKoja] SET [ploshadViresa] = @ploshadViresa, [idLista] = @idLista, [idIsdelia] = @idIsdelia WHERE (([idSatrachenoyKoji] = @Original_idSatrachenoyKoji) AND ([ploshadViresa] = @Original_ploshadViresa) AND ([idLista] = @Original_idLista) AND ([idIsdelia] = @Original_idIsdelia));
-SELECT idSatrachenoyKoji, ploshadViresa, idLista, idIsdelia FROM SatrachenayaKoja WHERE (idSatrachenoyKoji = @idSatrachenoyKoji)";
-            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ploshadViresa", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 2, "ploshadViresa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idLista", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idLista", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idIsdelia", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idIsdelia", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idSatrachenoyKoji", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idSatrachenoyKoji", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ploshadViresa", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 2, "ploshadViresa", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idLista", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idLista", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idIsdelia", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idIsdelia", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idSatrachenoyKoji", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idSatrachenoyKoji", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private void InitConnection() {
-            this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::DIPLOM.Properties.Settings.Default.Database1ConnectionString;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
-            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT idSatrachenoyKoji, ploshadViresa, idLista, idIsdelia FROM dbo.Satrachenaya" +
-                "Koja";
-            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DataSet1.SatrachenayaKojaDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DataSet1.SatrachenayaKojaDataTable GetData() {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            DataSet1.SatrachenayaKojaDataTable dataTable = new DataSet1.SatrachenayaKojaDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DataSet1.SatrachenayaKojaDataTable dataTable) {
-            return this.Adapter.Update(dataTable);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DataSet1 dataSet) {
-            return this.Adapter.Update(dataSet, "SatrachenayaKoja");
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow dataRow) {
-            return this.Adapter.Update(new global::System.Data.DataRow[] {
-                        dataRow});
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow[] dataRows) {
-            return this.Adapter.Update(dataRows);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_idSatrachenoyKoji, decimal Original_ploshadViresa, int Original_idLista, int Original_idIsdelia) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_idSatrachenoyKoji));
-            this.Adapter.DeleteCommand.Parameters[1].Value = ((decimal)(Original_ploshadViresa));
-            this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_idLista));
-            this.Adapter.DeleteCommand.Parameters[3].Value = ((int)(Original_idIsdelia));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
-            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.DeleteCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.DeleteCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(decimal ploshadViresa, int idLista, int idIsdelia) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((decimal)(ploshadViresa));
-            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(idLista));
-            this.Adapter.InsertCommand.Parameters[2].Value = ((int)(idIsdelia));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
-            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.InsertCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.InsertCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(decimal ploshadViresa, int idLista, int idIsdelia, int Original_idSatrachenoyKoji, decimal Original_ploshadViresa, int Original_idLista, int Original_idIsdelia, int idSatrachenoyKoji) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((decimal)(ploshadViresa));
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(idLista));
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(idIsdelia));
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_idSatrachenoyKoji));
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((decimal)(Original_ploshadViresa));
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_idLista));
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_idIsdelia));
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(idSatrachenoyKoji));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
-            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.UpdateCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.UpdateCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(decimal ploshadViresa, int idLista, int idIsdelia, int Original_idSatrachenoyKoji, decimal Original_ploshadViresa, int Original_idLista, int Original_idIsdelia) {
-            return this.Update(ploshadViresa, idLista, idIsdelia, Original_idSatrachenoyKoji, Original_ploshadViresa, Original_idLista, Original_idIsdelia, Original_idSatrachenoyKoji);
-        }
-    }
-    
-    /// <summary>
-    ///Represents the connection and commands used to retrieve and save data.
-    ///</summary>
-    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
-    [global::System.ComponentModel.ToolboxItem(true)]
-    [global::System.ComponentModel.DataObjectAttribute(true)]
-    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
-    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
     public partial class listiKojiTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
@@ -9682,6 +9421,330 @@ SELECT idLista, ploshad, prichinaSpisania, dataSpisania, vidKoji, idSakupki, sto
     }
     
     /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class SatrachenayaKojaTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public SatrachenayaKojaTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "SatrachenayaKoja";
+            tableMapping.ColumnMappings.Add("idSatrachenoyKoji", "idSatrachenoyKoji");
+            tableMapping.ColumnMappings.Add("ploshadViresa", "ploshadViresa");
+            tableMapping.ColumnMappings.Add("idLista", "idLista");
+            tableMapping.ColumnMappings.Add("idIsdelia", "idIsdelia");
+            tableMapping.ColumnMappings.Add("idIspolzuemoyKoji", "idIspolzuemoyKoji");
+            this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[SatrachenayaKoja] WHERE (([idSatrachenoyKoji] = @Original_idSatrachenoyKoji) AND ([ploshadViresa] = @Original_ploshadViresa) AND ([idLista] = @Original_idLista) AND ([idIsdelia] = @Original_idIsdelia) AND ([idIspolzuemoyKoji] = @Original_idIspolzuemoyKoji))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idSatrachenoyKoji", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idSatrachenoyKoji", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ploshadViresa", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 2, "ploshadViresa", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idLista", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idLista", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idIsdelia", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idIsdelia", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idIspolzuemoyKoji", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idIspolzuemoyKoji", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[SatrachenayaKoja] ([ploshadViresa], [idLista], [idIsdelia], [idIspolzuemoyKoji]) VALUES (@ploshadViresa, @idLista, @idIsdelia, @idIspolzuemoyKoji);
+SELECT idSatrachenoyKoji, ploshadViresa, idLista, idIsdelia, idIspolzuemoyKoji FROM SatrachenayaKoja WHERE (idSatrachenoyKoji = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ploshadViresa", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 2, "ploshadViresa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idLista", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idLista", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idIsdelia", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idIsdelia", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idIspolzuemoyKoji", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idIspolzuemoyKoji", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[SatrachenayaKoja] SET [ploshadViresa] = @ploshadViresa, [idLista] = @idLista, [idIsdelia] = @idIsdelia, [idIspolzuemoyKoji] = @idIspolzuemoyKoji WHERE (([idSatrachenoyKoji] = @Original_idSatrachenoyKoji) AND ([ploshadViresa] = @Original_ploshadViresa) AND ([idLista] = @Original_idLista) AND ([idIsdelia] = @Original_idIsdelia) AND ([idIspolzuemoyKoji] = @Original_idIspolzuemoyKoji));
+SELECT idSatrachenoyKoji, ploshadViresa, idLista, idIsdelia, idIspolzuemoyKoji FROM SatrachenayaKoja WHERE (idSatrachenoyKoji = @idSatrachenoyKoji)";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ploshadViresa", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 2, "ploshadViresa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idLista", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idLista", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idIsdelia", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idIsdelia", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idIspolzuemoyKoji", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idIspolzuemoyKoji", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idSatrachenoyKoji", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idSatrachenoyKoji", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ploshadViresa", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 2, "ploshadViresa", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idLista", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idLista", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idIsdelia", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idIsdelia", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idIspolzuemoyKoji", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idIspolzuemoyKoji", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idSatrachenoyKoji", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idSatrachenoyKoji", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::DIPLOM.Properties.Settings.Default.Database1ConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT idSatrachenoyKoji, ploshadViresa, idLista, idIsdelia, idIspolzuemoyKoji FR" +
+                "OM dbo.SatrachenayaKoja";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(DataSet1.SatrachenayaKojaDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual DataSet1.SatrachenayaKojaDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            DataSet1.SatrachenayaKojaDataTable dataTable = new DataSet1.SatrachenayaKojaDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(DataSet1.SatrachenayaKojaDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(DataSet1 dataSet) {
+            return this.Adapter.Update(dataSet, "SatrachenayaKoja");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(int Original_idSatrachenoyKoji, decimal Original_ploshadViresa, int Original_idLista, int Original_idIsdelia, int Original_idIspolzuemoyKoji) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_idSatrachenoyKoji));
+            this.Adapter.DeleteCommand.Parameters[1].Value = ((decimal)(Original_ploshadViresa));
+            this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_idLista));
+            this.Adapter.DeleteCommand.Parameters[3].Value = ((int)(Original_idIsdelia));
+            this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_idIspolzuemoyKoji));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(decimal ploshadViresa, int idLista, int idIsdelia, int idIspolzuemoyKoji) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((decimal)(ploshadViresa));
+            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(idLista));
+            this.Adapter.InsertCommand.Parameters[2].Value = ((int)(idIsdelia));
+            this.Adapter.InsertCommand.Parameters[3].Value = ((int)(idIspolzuemoyKoji));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(decimal ploshadViresa, int idLista, int idIsdelia, int idIspolzuemoyKoji, int Original_idSatrachenoyKoji, decimal Original_ploshadViresa, int Original_idLista, int Original_idIsdelia, int Original_idIspolzuemoyKoji, int idSatrachenoyKoji) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((decimal)(ploshadViresa));
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(idLista));
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(idIsdelia));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(idIspolzuemoyKoji));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_idSatrachenoyKoji));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((decimal)(Original_ploshadViresa));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_idLista));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_idIsdelia));
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_idIspolzuemoyKoji));
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(idSatrachenoyKoji));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(decimal ploshadViresa, int idLista, int idIsdelia, int idIspolzuemoyKoji, int Original_idSatrachenoyKoji, decimal Original_ploshadViresa, int Original_idLista, int Original_idIsdelia, int Original_idIspolzuemoyKoji) {
+            return this.Update(ploshadViresa, idLista, idIsdelia, idIspolzuemoyKoji, Original_idSatrachenoyKoji, Original_ploshadViresa, Original_idLista, Original_idIsdelia, Original_idIspolzuemoyKoji, Original_idSatrachenoyKoji);
+        }
+    }
+    
+    /// <summary>
     ///TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
     ///</summary>
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -9713,9 +9776,9 @@ SELECT idLista, ploshad, prichinaSpisania, dataSpisania, vidKoji, idSakupki, sto
         
         private satrachenayaFurnituraTableAdapter _satrachenayaFurnituraTableAdapter;
         
-        private SatrachenayaKojaTableAdapter _satrachenayaKojaTableAdapter;
-        
         private listiKojiTableAdapter _listiKojiTableAdapter;
+        
+        private SatrachenayaKojaTableAdapter _satrachenayaKojaTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -9877,12 +9940,12 @@ SELECT idLista, ploshad, prichinaSpisania, dataSpisania, vidKoji, idSakupki, sto
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public SatrachenayaKojaTableAdapter SatrachenayaKojaTableAdapter {
+        public listiKojiTableAdapter listiKojiTableAdapter {
             get {
-                return this._satrachenayaKojaTableAdapter;
+                return this._listiKojiTableAdapter;
             }
             set {
-                this._satrachenayaKojaTableAdapter = value;
+                this._listiKojiTableAdapter = value;
             }
         }
         
@@ -9891,12 +9954,12 @@ SELECT idLista, ploshad, prichinaSpisania, dataSpisania, vidKoji, idSakupki, sto
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public listiKojiTableAdapter listiKojiTableAdapter {
+        public SatrachenayaKojaTableAdapter SatrachenayaKojaTableAdapter {
             get {
-                return this._listiKojiTableAdapter;
+                return this._satrachenayaKojaTableAdapter;
             }
             set {
-                this._listiKojiTableAdapter = value;
+                this._satrachenayaKojaTableAdapter = value;
             }
         }
         
@@ -9959,13 +10022,13 @@ SELECT idLista, ploshad, prichinaSpisania, dataSpisania, vidKoji, idSakupki, sto
                             && (this._satrachenayaFurnituraTableAdapter.Connection != null))) {
                     return this._satrachenayaFurnituraTableAdapter.Connection;
                 }
-                if (((this._satrachenayaKojaTableAdapter != null) 
-                            && (this._satrachenayaKojaTableAdapter.Connection != null))) {
-                    return this._satrachenayaKojaTableAdapter.Connection;
-                }
                 if (((this._listiKojiTableAdapter != null) 
                             && (this._listiKojiTableAdapter.Connection != null))) {
                     return this._listiKojiTableAdapter.Connection;
+                }
+                if (((this._satrachenayaKojaTableAdapter != null) 
+                            && (this._satrachenayaKojaTableAdapter.Connection != null))) {
+                    return this._satrachenayaKojaTableAdapter.Connection;
                 }
                 return null;
             }
@@ -10010,10 +10073,10 @@ SELECT idLista, ploshad, prichinaSpisania, dataSpisania, vidKoji, idSakupki, sto
                 if ((this._satrachenayaFurnituraTableAdapter != null)) {
                     count = (count + 1);
                 }
-                if ((this._satrachenayaKojaTableAdapter != null)) {
+                if ((this._listiKojiTableAdapter != null)) {
                     count = (count + 1);
                 }
-                if ((this._listiKojiTableAdapter != null)) {
+                if ((this._satrachenayaKojaTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -10054,15 +10117,6 @@ SELECT idLista, ploshad, prichinaSpisania, dataSpisania, vidKoji, idSakupki, sto
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._sakupkaKojiTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.sakupkaKoji.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._sakupkaKojiTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._furnituraTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Furnitura.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -10081,6 +10135,24 @@ SELECT idLista, ploshad, prichinaSpisania, dataSpisania, vidKoji, idSakupki, sto
                     allChangedRows.AddRange(updatedRows);
                 }
             }
+            if ((this._ispolzuemayaKojaTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.ispolzuemayaKoja.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._ispolzuemayaKojaTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._sakupkaKojiTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.sakupkaKoji.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._sakupkaKojiTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             if ((this._listiKojiTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.listiKoji.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -10096,15 +10168,6 @@ SELECT idLista, ploshad, prichinaSpisania, dataSpisania, vidKoji, idSakupki, sto
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._ispolzuemayaFurnituraTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._ispolzuemayaKojaTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.ispolzuemayaKoja.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._ispolzuemayaKojaTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -10169,14 +10232,6 @@ SELECT idLista, ploshad, prichinaSpisania, dataSpisania, vidKoji, idSakupki, sto
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._sakupkaKojiTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.sakupkaKoji.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._sakupkaKojiTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._furnituraTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Furnitura.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -10193,6 +10248,22 @@ SELECT idLista, ploshad, prichinaSpisania, dataSpisania, vidKoji, idSakupki, sto
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._ispolzuemayaKojaTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.ispolzuemayaKoja.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._ispolzuemayaKojaTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._sakupkaKojiTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.sakupkaKoji.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._sakupkaKojiTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             if ((this._listiKojiTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.listiKoji.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -10206,14 +10277,6 @@ SELECT idLista, ploshad, prichinaSpisania, dataSpisania, vidKoji, idSakupki, sto
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._ispolzuemayaFurnituraTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._ispolzuemayaKojaTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.ispolzuemayaKoja.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._ispolzuemayaKojaTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -10275,14 +10338,6 @@ SELECT idLista, ploshad, prichinaSpisania, dataSpisania, vidKoji, idSakupki, sto
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._ispolzuemayaKojaTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.ispolzuemayaKoja.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._ispolzuemayaKojaTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._ispolzuemayaFurnituraTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.ispolzuemayaFurnitura.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -10299,6 +10354,22 @@ SELECT idLista, ploshad, prichinaSpisania, dataSpisania, vidKoji, idSakupki, sto
                     allChangedRows.AddRange(deletedRows);
                 }
             }
+            if ((this._sakupkaKojiTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.sakupkaKoji.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._sakupkaKojiTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._ispolzuemayaKojaTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.ispolzuemayaKoja.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._ispolzuemayaKojaTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
             if ((this._isdeliaTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.isdelia.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -10312,14 +10383,6 @@ SELECT idLista, ploshad, prichinaSpisania, dataSpisania, vidKoji, idSakupki, sto
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._furnituraTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._sakupkaKojiTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.sakupkaKoji.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._sakupkaKojiTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -10436,13 +10499,13 @@ SELECT idLista, ploshad, prichinaSpisania, dataSpisania, vidKoji, idSakupki, sto
                 throw new global::System.ArgumentException("Все адаптеры таблицы, управляемые диспетчером адаптера таблицы TableAdapterManage" +
                         "r, должны использовать одинаковую строку подключения.");
             }
-            if (((this._satrachenayaKojaTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._satrachenayaKojaTableAdapter.Connection) == false))) {
+            if (((this._listiKojiTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._listiKojiTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("Все адаптеры таблицы, управляемые диспетчером адаптера таблицы TableAdapterManage" +
                         "r, должны использовать одинаковую строку подключения.");
             }
-            if (((this._listiKojiTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._listiKojiTableAdapter.Connection) == false))) {
+            if (((this._satrachenayaKojaTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._satrachenayaKojaTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("Все адаптеры таблицы, управляемые диспетчером адаптера таблицы TableAdapterManage" +
                         "r, должны использовать одинаковую строку подключения.");
             }
@@ -10568,15 +10631,6 @@ SELECT idLista, ploshad, prichinaSpisania, dataSpisania, vidKoji, idSakupki, sto
                         adaptersWithAcceptChangesDuringUpdate.Add(this._satrachenayaFurnituraTableAdapter.Adapter);
                     }
                 }
-                if ((this._satrachenayaKojaTableAdapter != null)) {
-                    revertConnections.Add(this._satrachenayaKojaTableAdapter, this._satrachenayaKojaTableAdapter.Connection);
-                    this._satrachenayaKojaTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._satrachenayaKojaTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._satrachenayaKojaTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._satrachenayaKojaTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._satrachenayaKojaTableAdapter.Adapter);
-                    }
-                }
                 if ((this._listiKojiTableAdapter != null)) {
                     revertConnections.Add(this._listiKojiTableAdapter, this._listiKojiTableAdapter.Connection);
                     this._listiKojiTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
@@ -10584,6 +10638,15 @@ SELECT idLista, ploshad, prichinaSpisania, dataSpisania, vidKoji, idSakupki, sto
                     if (this._listiKojiTableAdapter.Adapter.AcceptChangesDuringUpdate) {
                         this._listiKojiTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
                         adaptersWithAcceptChangesDuringUpdate.Add(this._listiKojiTableAdapter.Adapter);
+                    }
+                }
+                if ((this._satrachenayaKojaTableAdapter != null)) {
+                    revertConnections.Add(this._satrachenayaKojaTableAdapter, this._satrachenayaKojaTableAdapter.Connection);
+                    this._satrachenayaKojaTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._satrachenayaKojaTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._satrachenayaKojaTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._satrachenayaKojaTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._satrachenayaKojaTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -10684,13 +10747,13 @@ SELECT idLista, ploshad, prichinaSpisania, dataSpisania, vidKoji, idSakupki, sto
                     this._satrachenayaFurnituraTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._satrachenayaFurnituraTableAdapter]));
                     this._satrachenayaFurnituraTableAdapter.Transaction = null;
                 }
-                if ((this._satrachenayaKojaTableAdapter != null)) {
-                    this._satrachenayaKojaTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._satrachenayaKojaTableAdapter]));
-                    this._satrachenayaKojaTableAdapter.Transaction = null;
-                }
                 if ((this._listiKojiTableAdapter != null)) {
                     this._listiKojiTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._listiKojiTableAdapter]));
                     this._listiKojiTableAdapter.Transaction = null;
+                }
+                if ((this._satrachenayaKojaTableAdapter != null)) {
+                    this._satrachenayaKojaTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._satrachenayaKojaTableAdapter]));
+                    this._satrachenayaKojaTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];
